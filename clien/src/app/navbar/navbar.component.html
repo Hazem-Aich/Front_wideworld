@@ -1,0 +1,247 @@
+<section class="main body">
+  <div class="wrapper">
+      <div class="navbar">
+        <div class="navbar_left">
+          <div class="logo">
+              <a href="#" class="logo">
+                  <img src="../../assets/image/mdcare.png"/>
+              </a>
+          </div>
+        </div>
+
+
+        <div class="navbar_right">
+          <div class="notifications">
+            <div class="icon_wrap"><i  class="far fa-bell"></i></div>
+
+            <div class="notification_dd">
+                <ul class="notification_ul">
+                    <li class="starbucks success">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Lorem, ipsum dolor.
+                            </div>
+                            <div class="sub_title">
+                              Lorem ipsum dolor sit amet consectetur.
+                          </div>
+                        </div>
+                        <div class="notify_status">
+                            <p>Success</p>
+                        </div>
+                    </li>
+                    <li class="baskin_robbins failed">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Lorem, ipsum dolor.
+                            </div>
+                            <div class="sub_title">
+                              Lorem ipsum dolor sit amet consectetur.
+                          </div>
+                        </div>
+                        <div class="notify_status">
+                            <p>Failed</p>
+                        </div>
+                    </li>
+                    <li class="mcd success">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Lorem, ipsum dolor.
+                            </div>
+                            <div class="sub_title">
+                              Lorem ipsum dolor sit amet consectetur.
+                          </div>
+                        </div>
+                        <div class="notify_status">
+                            <p>Success</p>
+                        </div>
+                    </li>
+                    <li class="pizzahut failed">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Lorem, ipsum dolor.
+                            </div>
+                            <div class="sub_title">
+                              Lorem ipsum dolor sit amet consectetur.
+                          </div>
+                        </div>
+                        <div class="notify_status">
+                            <p>Failed</p>
+                        </div>
+                    </li>
+                    <li class="kfc success">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Lorem, ipsum dolor.
+                            </div>
+                            <div class="sub_title">
+                              Lorem ipsum dolor sit amet consectetur.
+                          </div>
+                        </div>
+                        <div class="notify_status">
+                            <p>Success</p>
+                        </div>
+                    </li>
+                    <li class="show_all">
+                        <p class="link">Show All Activities</p>
+                    </li>
+                </ul>
+            </div>
+
+          </div>
+
+          <div class="profile" *ngIf="!auth">
+            <div class="icon_wrap" *ngFor="let x of patient">
+              <i   class="fas fa-user-circle"></i>
+              <span class="name" style="text-transform: uppercase;"><b>{{x.lNameP}} {{x.fNameP}}</b></span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="profile_dd">
+              <ul class="profile_ul">
+                <li class="profile_li"><a class="profile" [routerLink]='["/home/ordonance"]'><span class="picon"><i class="fas fa-user-alt"></i>
+                    </span>Profile</a>
+                  <div class="btn">My Account</div>
+                </li>
+                <li><a class="editprofile" [routerLink]='["/home/editProfil"]'><span class="picon"><i class="fas fa-id-card-alt"></i></span>Edit profile</a></li>
+                <li><a class="logout" (click)="logout()"><span class="picon"><i class="fas fa-sign-out-alt"></i></span>Logout</a></li>
+              </ul>
+            </div>
+
+
+          </div>
+          <div class="profile" *ngIf="auth">
+            <div class="icon_wrap" *ngFor="let x of doctor">
+              <i   class="fas fa-user-circle"></i>
+              <span class="name" style="text-transform: uppercase;"><b>dr. {{x.lNameD}} {{x.fNameD}}</b></span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="profile_dd">
+              <ul class="profile_ul">
+                <li class="profile_li"><a [routerLink]='["/home/Doctor"]' class="profile" ><span class="picon"><i class="fas fa-user-alt"></i>
+                    </span>Profile</a>
+                  <div class="btn"  [routerLink]='["/home/profilDoctor"]'>My Account</div>
+                </li>
+                <li><a class="editprofile" [routerLink]='["/home/editProfilDoctor"]'><span class="picon"><i class="fas fa-id-card-alt"></i></span>Edit Profile</a></li>
+                <li><a  [routerLink]='["/home/calendrier"]'><span class="picon"><i class="fa fa-calendar" aria-hidden="true"></i></span>Calendrier</a></li>
+                <li><a class="logout" (click)="logout()"><span class="picon"><i class="fas fa-sign-out-alt"></i></span>Logout</a></li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="popup">
+        <div class="shadow"></div>
+        <div class="inner_popup">
+            <div class="notification_dd">
+                <ul class="notification_ul">
+                    <li class="title">
+                        <p>All Notifications</p>
+                        <p class="close"><i class="fas fa-times" aria-hidden="true"></i></p>
+                    </li>
+                    <li class="starbucks success">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Lorem, ipsum dolor.
+                            </div>
+                            <div class="sub_title">
+                              Lorem ipsum dolor sit amet consectetur.
+                          </div>
+                        </div>
+                        <div class="notify_status">
+                            <p>Success</p>
+                        </div>
+                    </li>
+                    <li class="baskin_robbins failed">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Lorem, ipsum dolor.
+                            </div>
+                            <div class="sub_title">
+                              Lorem ipsum dolor sit amet consectetur.
+                          </div>
+                        </div>
+                        <div class="notify_status">
+                            <p>Failed</p>
+                        </div>
+                    </li>
+                    <li class="mcd success">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Lorem, ipsum dolor.
+                            </div>
+                            <div class="sub_title">
+                              Lorem ipsum dolor sit amet consectetur.
+                          </div>
+                        </div>
+                        <div class="notify_status">
+                            <p>Success</p>
+                        </div>
+                    </li>
+                    <li class="pizzahut failed">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Lorem, ipsum dolor.
+                            </div>
+                            <div class="sub_title">
+                              Lorem ipsum dolor sit amet consectetur.
+                          </div>
+                        </div>
+                        <div class="notify_status">
+                            <p>Failed</p>
+                        </div>
+                    </li>
+                    <li class="kfc success">
+                        <div class="notify_icon">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="notify_data">
+                            <div class="title">
+                                Lorem, ipsum dolor.
+                            </div>
+                            <div class="sub_title">
+                              Lorem ipsum dolor sit amet consectetur.
+                          </div>
+                        </div>
+                        <div class="notify_status">
+                            <p>Success</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+
+    </div>
+    <div  style="margin-top: -625px;">
+    </div>
+</section>
+

@@ -1,0 +1,194 @@
+<body class="home-content" style="margin-top: 50px;" >
+    <div class="mycontainer">
+          <div class="forms-container">
+            <div class="signin-signup">
+              <form [formGroup]="loginForm" class="sign-in-form my-5 " >
+                <h2 class="title">Sign in</h2>
+    
+                <div class="input-field">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text" placeholder="Email" formControlName="emailP" matInput />
+                </div>
+                <div *ngIf="errorMessageR && loginForm.controls['emailP'].invalid || loginForm.controls['emailP'].invalid && loginForm.controls['emailP'].touched" >
+                  <div  *ngIf="loginForm.controls['emailP'].errors.required ">
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> Please enter email</p>
+                  </div>
+                 </div>
+    
+                <div class="input-field">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" placeholder="Password" formControlName="passwordP"  matInput required/>
+                </div>
+                <div   *ngIf="errorMessageR && loginForm.controls['passwordP'].invalid || loginForm.controls['passwordP'].invalid && loginForm.controls['passwordP'].touched" >
+                  <div  *ngIf="loginForm.controls['passwordP'].errors.required ">
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> Please enter password</p>
+                  </div>
+                 </div>
+                <button type="submit" type="submit" (click)="login()" class="btn solid">Login</button>
+                <div class="alert alert-danger" *ngIf="errorMessage">
+                  <i class="fas fa-exclamation-circle"></i> {{serverErrorMessages}}
+                </div>
+                <p class="social-text">Or Sign in with social platforms</p>
+                <div class="social-media">
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-google"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </form>
+              <!--Sign Up-->
+              <form [formGroup]="resisterForm" class="sign-up-form">
+                <h2 class="title">Sign up</h2>
+                <div class="row col-12">
+                <div class="myinput-field  col-2" >
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="First Name"  formControlName="fNameP"  matInput  required/>
+                </div>
+    
+                <div class="myinput-field col-2 mx-3">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="Last Name" formControlName="lNameP"  matInput  required  />
+                </div>
+                </div>
+                <div *ngIf="errorMessageR && resisterForm.controls['fNameP'].invalid || resisterForm.controls['fNameP'].invalid && resisterForm.controls['fNameP'].touched" >
+                  <div  *ngIf="resisterForm.controls['fNameP'].errors.required ">
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> Please enter first name</p>
+                  </div>
+                 </div>
+                 <div *ngIf="errorMessageR && resisterForm.controls['lNameP'].invalid || resisterForm.controls['lNameP'].invalid && resisterForm.controls['lNameP'].touched" >
+                  <div  *ngIf="resisterForm.controls['lNameP'].errors.required ">
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> Please enter last name</p>
+                  </div>
+                 </div>
+                <div class="input-field">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" placeholder="Email" required formControlName="emailP"  matInput  />
+                </div>
+                <div *ngIf="errorMessageR && resisterForm.controls['emailP'].invalid || resisterForm.controls['emailP'].invalid && resisterForm.controls['emailP'].touched" >
+                  <div  *ngIf="resisterForm.controls['emailP'].errors.required ">
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> Please enter email</p>
+                  </div>
+                 </div>
+                <div class="input-field ">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" placeholder="Password" formControlName="passwordP"  matInput required />
+                </div>
+                <div *ngIf="errorMessageR && resisterForm.controls['passwordP'].invalid || resisterForm.controls['passwordP'].invalid && resisterForm.controls['passwordP'].touched" >
+                  <div  *ngIf="resisterForm.controls['passwordP'].errors.required ">
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> Please enter password</p>
+                  </div>
+                 </div>
+                <div class="input-field ">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" placeholder="Confirm Password" formControlName="confirmPasswordP" matInput required />
+                </div>
+                <div *ngIf="errorMessageR && resisterForm.controls['confirmPasswordP'].invalid || resisterForm.controls['confirmPasswordP'].invalid && resisterForm.controls['confirmPasswordP'].touched" >
+                  <div  *ngIf="resisterForm.controls['confirmPasswordP'].errors.required ">
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> Please enter password</p>
+                  </div>
+                 </div>
+                <div *ngIf="resisterForm.controls['passwordP'].value !== resisterForm.controls['confirmPasswordP'].value && resisterForm.controls['confirmPasswordP'].touched">
+                  <div>
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> password et confirm password</p>
+                  </div>
+                 </div>
+    
+                <div class="input-field">
+                  <i class="fas fa-venus-mars"></i>
+                  <select required formControlName="sexeP"  mat-select [(ngModel)]=sexep >
+                    <option  value="" disabled selected>--sexe--</option>
+                    <option value="femme">Femme</option>
+                    <option value="homme">Homme</option>
+                  </select>
+                </div>
+                <div *ngIf="errorMessageR && resisterForm.controls['sexeP'].invalid || resisterForm.controls['sexeP'].invalid && resisterForm.controls['sexeP'].touched" >
+                  <div  *ngIf="resisterForm.controls['sexeP'].errors.required ">
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> Please enter sexe</p>
+                  </div>
+                 </div>
+                <div class="input-field">
+                  <i class="fas fa-phone"></i>
+                  <input type="number" formControlName="phoneP"  matInput placeholder="phone" />
+                </div>
+                <div *ngIf="errorMessageR && resisterForm.controls['phoneP'].invalid || resisterForm.controls['phoneP'].invalid && resisterForm.controls['phoneP'].touched" >
+                  <div  *ngIf="resisterForm.controls['phoneP'].errors.required ">
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> Please enter phone</p>
+                  </div>
+                 </div>
+                <div class="input-field">
+                  <i class="fas fa-city"></i>
+                  <select required formControlName="cityP"  mat-select [(ngModel)]=cityp >
+                    <option value="" disabled selected hidden>--City--</option>
+                    <option *ngFor="let x of city" value={{x._id}}>{{x.city}}</option>
+                  </select>
+                </div>
+                <div *ngIf="errorMessageR && resisterForm.controls['cityP'].invalid || resisterForm.controls['cityP'].invalid && resisterForm.controls['cityP'].touched" >
+                  <div  *ngIf="resisterForm.controls['cityP'].errors.required ">
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> Please enter city</p>
+                  </div>
+                 </div>
+                <button type="submit" class="btn" (click)="signUp()" >Sign up</button>
+                <div class="alert alert-danger" *ngIf="errorMessage">
+                  <i class="fas fa-exclamation-circle"></i> {{serverErrorMessages}}
+                </div>
+                <p class="social-text">Or Sign up with social platforms</p>
+                <div class="social-media">
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-google"></i>
+                  </a>
+                  <a href="#" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+    
+          <div class="panels-container">
+            <div class="panel left-panel">
+              <div class="content">
+                <h3>New here ?</h3>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+                  ex ratione. Aliquid!
+                </p>
+                <button class="btn transparent" id="sign-up-btn">
+                  Sign up
+                </button>
+              </div>
+              <img  src="../../assets/image/L1.png" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+              <div class="content">
+                <h3>One of us ?</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                  laboriosam ad deleniti.
+                </p>
+                <button   class="btn transparent" id="sign-in-btn">
+                  Sign in
+                </button>
+              </div>
+              <img src="../../assets/image/L2.png" class="image" alt="" />
+            </div>
+          </div>
+        </div>
+    </body>
+    
+    
+    
+    

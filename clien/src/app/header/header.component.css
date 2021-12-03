@@ -1,0 +1,69 @@
+.body{
+  margin:0px;
+  padding: 0px;
+  font-family: calibri;
+}
+*{
+  box-sizing: border-box;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.main{
+  width:100%;
+  height:100vh;
+  background-image: url();
+  background-size: cover;
+  background-position: top left;
+  position: relative;
+}
+.logo img{
+  height: 70px;
+}
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px 0px 100px;
+  padding: 10px 10px;
+  background-color:#fff;
+  z-index: 1;
+  width:100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  font-family: 'Dosis', sans-serif;
+
+}
+nav ul{
+  display: flex;
+  margin:0px;
+  padding: 0px;
+}
+nav ul li a{
+  height:40px;
+  line-height: 43px;
+  margin: 4px;
+  padding: 0px 20px;
+  display: flex;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  color:#111;
+  border-radius: 20px;
+  letter-spacing: 3px;
+  
+}
+nav ul li a:hover{
+  background-color: #60BAC9;
+  
+  box-shadow: 5px 10px 30px #89D8E5, inset 5px 10px 30px #89D8E5;
+  transition: all ease 0.2s;
+}
+
+
+
+

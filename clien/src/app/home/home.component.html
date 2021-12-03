@@ -1,0 +1,180 @@
+<section class="main body" id="page">
+  <div class="home-content" style="margin-top: -50px;">
+    <!--text-->
+    <div class="home-text">
+      <h1>La France</h1>
+      <p>La France est un pays d’Europe occidentale, constitué de la France métropolitaine et de la France d’outre-mer, appartenant à l’Union européenne.</p>
+    </div>
+    <!--img-->
+    <div class="home-img">
+      <img src="../../assets/image/17196.jpg" />
+    </div>
+  </div>
+  <!--arrow-->
+  <div class="arrow"></div>
+  <span class="scroll">Scroll</span> 
+  <!--arrow-->
+  <div class="arrow"></div>
+  <span class="scroll">Scroll</span>
+</section>
+
+<!---a propos---->
+<section class="services" >
+  
+
+  <!--heading----------->
+  
+  <!--box-container----------------->
+  <div class="box-container">
+    <!--box-1--------> 
+  </div>
+</section>
+
+<!-------géographie-------------->
+<section class="services" >
+  <!--heading----------->
+  <div class="services-heading" >
+    <h2> Services</h2>
+   <p>La France métropolitaine est située à l’une des extrémités occidentales de l’Europe. Elle est bordée par la mer du Nord au nord, la Manche au nord-ouest, l’océan Atlantique à l’ouest et la mer Méditerranée au sud-est. Elle est frontalière de la Belgique et du Luxembourg au nord-est, de l’Allemagne et de la Suisse à l’est, de l’Italie et de Monaco au sud-est, de l’Espagne et d’Andorre au sud-ouest</p> 
+  </div>
+<div id="services">
+  <div class="box-container">
+    <!----box1---->
+    <div class="box" style="width: 500px;">
+      <img src="">
+      <font></font>
+      <p>  .</p>
+    </div>
+    <!--box-1-------->
+    <div class="box" style="width: 200px;">
+      <img src="">
+      <font></font>
+      <p>Capitale : 
+        Paris, capitale de la France, est une grande ville européenne et un centre mondial de l'art, de la mode, de la gastronomie et de la culture. Son paysage urbain du XIXe siècle est traversé par de larges boulevards et la Seine. Outre les monuments comme la tour Eiffel et la cathédrale gothique Notre-Dame du XIIe siècle, la ville est réputée pour ses cafés et ses boutiques de luxe bordant la rue du Faubourg-Saint-Honoré
+        </p>
+    </div>
+    <!--box-2-------->
+    <div class="box" style="width: 500px;">
+      <img src="../../assets/image/22.jpg" style="margin-left: 800px; margin-bottom: 50px; width: 100px;"/>
+      <p style="margin-right: 50px; margin-bottom: 50px;"> Cette statistique représente la population totale de la France entre 2004 et 2021. En l'espace de quinze ans, la population française a augmenté de près de cinq millions d'habitants, et est ainsi passée d'environ 62,25 millions de Français en 2004 à plus de 67,4 millions d'habitants au 1er janvier 2021</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!------------------modification---------------------->
+<section class="services1" id="Modification">
+  <div class="services1-heading">
+    <h2 >Modification</h2>
+    <p id="signin">Lorsque l'utilisateur veut ajouter une information bien précise il envoie une réquete pour modifier les informations. </p>
+  </div>
+  <div class="box1-container">
+    <!--box-1-------->
+    <div class="box1">
+      <img src="../../assets/image/undraw_Events_re_98ue.png">
+      <!--btn--------->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Ajouter
+        </button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="margin-left: 130px;">Ajouter des informations</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+                 
+            
+                      <div class="modal-body">
+                        
+                        <form>
+                          <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Nom</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Prénom</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                          </div>
+                          <div class="form-group">
+                            <label for="message-text" class="col-form-label">Information</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                          </div>
+                         
+                        </form>
+                      </div>  
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+        </div>
+          </div>
+        </div>
+
+    
+  </div>
+</section>
+
+
+<!-----------CONNEXION----------------------->
+<section class="services" >
+  <!--heading----------->
+  <div class="services-heading" >
+    <h2 >Connexion</h2>
+    <p id="signin">Cette plateforme accessible pour tous les participants</p>
+  </div>
+  <div class="box-container" >
+     <!--box-2-------->
+    <div class="box">
+      <img src="../../assets/image/patient.png">
+      <font>Sign in Utilisateur</font>
+      <p>Inscrivez-vous gratuitement en moins de 2 minutes pour accéder à votre Espace privé. Vos données sont sécurisées.</p>
+      <!--btn--------->
+      <a [routerLink]='["/loginPatient"]' style="border-radius: 20px;">Sign In</a>
+    </div>
+  </div>
+</section>
+
+<!-----------------FOOTER---------->
+<footer>
+  <div class="art">
+    <div class="content">
+      <section>
+        <header>Explore</header>
+        <a href="#">Acceuil</a>
+        <a href="#">Géographie</a>
+        <a href="#">Démographie</a>
+        <a href="#">Economie</a>
+        <a href="#">Connexion</a>
+      </section>
+      <section>
+        <header>Equipe</header>
+        <a href="#">A Propos De Nous</a>
+
+      </section>
+
+      <section>
+        <header>Nous contacter</header>
+        <form action="">
+          <input type="email" placeholder="Mettez Votre Email" id="">
+          <input type="submit" value="Abonnez-vous maintenant">
+        </form>
+        <div class="social">
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-facebook-f"></i> <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-telegram-plane"></i>
+
+        </div>
+      </section>
+    </div>
+    <div class="notice">
+      copyright protected &copy;
+      <strong>SPACEX</strong>
+    </div>
+
+  </div>
+</footer>
+
